@@ -43,24 +43,32 @@ class HighlightsDesktopWidget extends StatelessWidget {
                   direction: Axis.horizontal,
                   children: [
                     highlightContainer(
-                        '13,500+ YouTube \nSubscribers',
+                        context,
+                        false,
+                        '14,000+ YouTube Subscribers',
                         AppImages.bookmarkImage,
-                        'Published over 350 Videos sharing my \nDevelopment Experiences and Technical Expertise. ',
+                        'Published over 350 Videos sharing my Development Experiences and Technical Expertise. ',
                         'VISIT CHANNEL'),
                     highlightContainer(
-                        '13,500+ YouTube \nSubscribers',
+                        context,
+                        false,
+                        'Ex-Intern @Tickertape',
                         AppImages.bulbImage,
-                        'Published over 350 Videos sharing my \nDevelopment Experiences and Technical Expertise. ',
+                        'Worked at Indian Fintech Startup Tickertape as a Mobile Development Engineer',
                         'VISIT CHANNEL'),
                     highlightContainer(
-                        '13,500+ YouTube \nSubscribers',
+                        context,
+                        false,
+                        'SDE @Stealth Startup',
                         AppImages.cupImage,
-                        'Published over 350 Videos sharing my \nDevelopment Experiences and Technical Expertise. ',
+                        'I am currently employed as an SDE at a HealthTech Accelerator Startup based in a beautiful city, Pune.',
                         'VISIT CHANNEL'),
                     highlightContainer(
-                        '13,500+ YouTube \nSubscribers',
+                        context,
+                        false,
+                        'ML Researcher',
                         AppImages.pickerImage,
-                        'Published over 350 Videos sharing my \nDevelopment Experiences and Technical Expertise. ',
+                        "With a passion for pushing AI's boundaries, I continually delve into the latest research and developments in the field.",
                         'VISIT CHANNEL'),
                   ],
                 )
@@ -72,8 +80,12 @@ class HighlightsDesktopWidget extends StatelessWidget {
     );
   }
 
-  Widget highlightContainer(String topic, imagePath, text, buttonText) {
+  Widget highlightContainer(BuildContext context, bool showButton, String topic,
+      imagePath, text, buttonText) {
+    double w = MediaQuery.of(context).size.width;
     return Container(
+      width: w / 2.5,
+      height: 240,
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       decoration: BoxDecoration(
           color: AppColors.purpleDark.withOpacity(0.5),
@@ -87,22 +99,30 @@ class HighlightsDesktopWidget extends StatelessWidget {
             path: imagePath,
           ),
           const SizedBox(width: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                topic,
-                style: const TextStyle(
-                    fontSize: 26, height: 1.4, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(height: 10),
-              Text(text),
-              const SizedBox(height: 10),
-              AppOutlinedButton(
-                title: buttonText,
-                textStyle: const TextStyle(fontSize: 12),
-              )
-            ],
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  topic,
+                  style: const TextStyle(
+                      fontSize: 26, height: 1.4, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  text,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  // style: TextStyle(fontSize: w / 80),
+                ),
+                const SizedBox(height: 10),
+                if (showButton)
+                  AppOutlinedButton(
+                    title: buttonText,
+                    textStyle: const TextStyle(fontSize: 12),
+                  )
+              ],
+            ),
           ),
         ],
       ),
