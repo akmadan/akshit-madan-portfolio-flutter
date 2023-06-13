@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 
 flutter run -d chrome --web-renderer html
-flutter build web --web-renderer html --release
+flutter build web --web-renderer html --release --no-tree-shake-icons
