@@ -9,6 +9,9 @@ class IntroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
+      tablet: (context) {
+        return const IntroDesktopWidget();
+      },
       desktop: (context) {
         return const IntroDesktopWidget();
       },

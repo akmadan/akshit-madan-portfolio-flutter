@@ -3,8 +3,8 @@ import 'package:akshit_madan/design/utils/app_colors.dart';
 import 'package:akshit_madan/design/widgets/app_image_widget.dart';
 import 'package:flutter/material.dart';
 
-class TechstackDesktopWidget extends StatelessWidget {
-  const TechstackDesktopWidget({super.key});
+class TechstackMobileWidget extends StatelessWidget {
+  const TechstackMobileWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class TechstackDesktopWidget extends StatelessWidget {
                         text:
                             'I have attained expertise in an array of cutting-edge '),
                     TextSpan(
-                        text: 'tech stacks \n',
+                        text: 'tech stacks ',
                         style: TextStyle(color: AppColors.purple)),
                     const TextSpan(
                         text:
@@ -37,25 +37,26 @@ class TechstackDesktopWidget extends StatelessWidget {
               child: const Text(
                 "I have served as the Founder of growmonks, overseeing the entire project lifecycle from ideation to successful client project delivery. As a Flutter Engineer at Tickertape(10M+), where I had the privilege of developing for a huge user base. I gained invaluable experience and deepened my understanding of mobile development concepts.",
                 textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14),
               ),
             ),
             const SizedBox(height: 20),
             Column(
               children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
-                        7,
+                        12,
                         (index) => techStackCircle(
                             techStackImages.values.toList()[index]))),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                        6,
-                        (index) => techStackCircle(techStackImages.values
-                            .toList()
-                            .reversed
-                            .toList()[index])))
+                // Row(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: List.generate(
+                //         6,
+                //         (index) => techStackCircle(techStackImages.values
+                //             .toList()
+                //             .reversed
+                //             .toList()[index])))
               ],
             )
           ],
