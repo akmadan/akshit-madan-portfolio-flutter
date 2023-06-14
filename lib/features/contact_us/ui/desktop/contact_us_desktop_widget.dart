@@ -1,5 +1,7 @@
 import 'package:akshit_madan/design/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter/social_media_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsDesktopWidget extends StatelessWidget {
   const ContactUsDesktopWidget({super.key});
@@ -22,28 +24,56 @@ class ContactUsDesktopWidget extends StatelessWidget {
           style: TextStyle(color: AppColors.purple),
         ),
         const SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.mail,
-                  color: Colors.white,
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.mail,
-                  color: Colors.white,
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.mail,
-                  color: Colors.white,
-                ))
-          ],
+        SizedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              InkWell(
+                onTap: () => launchUrl(
+                    Uri.parse('https://www.instagram.com/akshitmadan_/')),
+                child: SocialWidget(
+                  iconSize: 16,
+                  placeholderText: '',
+                  iconData: SocialIconsFlutter.instagram,
+                  iconColor: Colors.white,
+                  link: 'https://www.instagram.com/akshitmadan_/',
+                ),
+              ),
+              InkWell(
+                onTap: () => launchUrl(Uri.parse('https://github.com/akmadan')),
+                child: SocialWidget(
+                  iconSize: 16,
+                  placeholderText: '',
+                  iconData: SocialIconsFlutter.github,
+                  iconColor: Colors.white,
+                  link: 'https://github.com/akmadan',
+                ),
+              ),
+              InkWell(
+                onTap: () => launchUrl(Uri.parse(
+                    'https://www.linkedin.com/in/akshit-madan-394a82a6/')),
+                child: SocialWidget(
+                  iconSize: 16,
+                  placeholderText: '',
+                  iconData: SocialIconsFlutter.linkedin_box,
+                  iconColor: Colors.white,
+                  link: 'https://www.linkedin.com/in/akshit-madan-394a82a6/',
+                ),
+              ),
+              InkWell(
+                onTap: () => launchUrl(Uri.parse(
+                    'https://www.youtube.com/channel/UCBlphb6_k7X1P28OCYXMsWg')),
+                child: SocialWidget(
+                  placeholderText: '',
+                  iconSize: 16,
+                  iconData: SocialIconsFlutter.youtube,
+                  iconColor: Colors.white,
+                  link:
+                      'https://www.youtube.com/channel/UCBlphb6_k7X1P28OCYXMsWg',
+                ),
+              )
+            ],
+          ),
         ),
         const Divider(),
         const SizedBox(height: 20),
