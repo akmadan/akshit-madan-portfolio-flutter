@@ -38,6 +38,8 @@ dependencies:
   responsive_builder:
   dio:
   http:
+  url_launcher:
+  social_media_flutter: ^0.0.2
 
 
 

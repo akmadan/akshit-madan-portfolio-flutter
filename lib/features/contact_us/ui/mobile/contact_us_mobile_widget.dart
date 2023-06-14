@@ -15,8 +15,8 @@ class ContactUsMobileWidget extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         const Text(
-            "I'm currently looking to join a cross-functional team that values improving people's lives \nthrough accessible design. or have a project in mind? Let's connect."),
-        const SizedBox(height: 20),
+            "If you are a student, entrepreneur or just want to chat with me, drop me an interesting mail at 👇"),
+        const SizedBox(height: 8),
         Text(
           'akmadan1717@gmail.com',
           style: TextStyle(color: AppColors.purple),
