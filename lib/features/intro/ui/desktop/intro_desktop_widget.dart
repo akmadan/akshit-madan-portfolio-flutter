@@ -140,7 +140,7 @@ class IntroDesktopWidget extends StatelessWidget {
       onTap: () => launchUrl(Uri.parse(link)),
       child: SocialWidget(
         placeholderText: '',
-        iconData: SocialIconsFlutter.youtube,
+        iconData: iconPath,
         iconColor: Colors.white,
         link: link,
       ),

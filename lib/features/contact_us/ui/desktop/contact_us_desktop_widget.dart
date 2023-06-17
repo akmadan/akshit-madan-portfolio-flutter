@@ -59,8 +59,7 @@ class ContactUsDesktopWidget extends StatelessWidget {
       onTap: () => launchUrl(Uri.parse(link)),
       child: SocialWidget(
         placeholderText: '',
-        iconSize: 20,
-        iconData: SocialIconsFlutter.youtube,
+        iconData: iconPath,
         iconColor: Colors.white,
         link: link,
       ),

@@ -2,6 +2,7 @@ import 'package:akshit_madan/features/videos/bloc/videos_bloc.dart';
 import 'package:akshit_madan/project/di/app_dependency_injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VideosMobileWidget extends StatefulWidget {
   const VideosMobileWidget({super.key});
@@ -53,7 +54,8 @@ class _VideosMobileWidgetState extends State<VideosMobileWidget> {
                             //     :
                             videoContainer(
                                 successState.videos[index].thumbnailUrl,
-                                successState.videos[index].title);
+                                successState.videos[index].title,
+                                successState.videos[index].videoId);
                       }));
                 default:
                   return const CircularProgressIndicator();
@@ -63,25 +65,30 @@ class _VideosMobileWidgetState extends State<VideosMobileWidget> {
         ]));
   }
 
-  Widget videoContainer(String imageUrl, String title) {
-    return Container(
-      margin: const EdgeInsets.all(8),
-      // width: 320,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AspectRatio(
-            aspectRatio: 16 / 9.5,
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 8),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: DecorationImage(
-                      image: NetworkImage(imageUrl), fit: BoxFit.cover)),
+  Widget videoContainer(String imageUrl, String title, videoId) {
+    return InkWell(
+      onTap: () {
+        launchUrl(Uri.parse('https://youtu.be/$videoId'));
+      },
+      child: Container(
+        margin: const EdgeInsets.all(8),
+        // width: 320,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AspectRatio(
+              aspectRatio: 16 / 9.5,
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 8),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    image: DecorationImage(
+                        image: NetworkImage(imageUrl), fit: BoxFit.cover)),
+              ),
             ),
-          ),
-          Text(title)
-        ],
+            Text(title)
+          ],
+        ),
       ),
     );
   }
