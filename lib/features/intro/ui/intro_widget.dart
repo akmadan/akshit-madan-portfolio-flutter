@@ -10,7 +10,7 @@ class IntroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       tablet: (context) {
-        return const IntroDesktopWidget();
+        return const IntroMobileWidget();
       },
       desktop: (context) {
         return const IntroDesktopWidget();
