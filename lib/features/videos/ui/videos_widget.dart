@@ -11,6 +11,7 @@ class VideosWidget extends StatelessWidget {
     return ScreenTypeLayout.builder(
       desktop: (p0) => const VideosDesktopWidget(),
       mobile: (p0) => const VideosMobileWidget(),
+      tablet: (p0) => const VideosDesktopWidget(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:akshit_madan/design/utils/app_colors.dart';
 import 'package:akshit_madan/features/videos/bloc/videos_bloc.dart';
 import 'package:akshit_madan/project/di/app_dependency_injection.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,11 @@ class _VideosDesktopWidgetState extends State<VideosDesktopWidget> {
                             successState.videos[index].videoId);
                       }));
                 default:
-                  return const CircularProgressIndicator();
+                  return Center(
+                    child: CircularProgressIndicator(
+                      color: AppColors.purple,
+                    ),
+                  );
               }
             },
           )

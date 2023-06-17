@@ -40,6 +40,7 @@ dependencies:
   http:
   url_launcher:
   social_media_flutter: ^0.0.2
+  marquee: ^2.2.3
 
 
 

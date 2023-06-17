@@ -129,6 +129,7 @@ class IntroMobileWidget extends StatelessWidget {
       child: SocialWidget(
         placeholderText: '',
         iconData: iconPath,
+        iconSize: 20,
         iconColor: Colors.white,
         link: link,
       ),

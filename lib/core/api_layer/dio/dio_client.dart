@@ -11,7 +11,7 @@ abstract class DioClient extends API {
     required String baseUrl,
     // Iterable<Interceptor>? interceptors,
     bool isAuthenticatorRequired = false,
-    Duration timeout = const Duration(seconds: 20),
+    Duration timeout = const Duration(seconds: 8),
   }) : _dio = Dio(
           BaseOptions(
             baseUrl: baseUrl,

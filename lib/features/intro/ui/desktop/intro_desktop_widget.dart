@@ -12,7 +12,8 @@ class IntroDesktopWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    return SizedBox(
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: w / 30),
       height: MediaQuery.of(context).size.height,
       child: Stack(
         children: [

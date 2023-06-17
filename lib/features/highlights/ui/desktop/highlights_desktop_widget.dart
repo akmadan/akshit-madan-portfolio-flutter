@@ -84,8 +84,8 @@ class HighlightsDesktopWidget extends StatelessWidget {
       imagePath, text, buttonText) {
     double w = MediaQuery.of(context).size.width;
     return Container(
-      width: w / 2.5,
-      height: 240,
+      width: w / 2.4,
+      height: 260,
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       decoration: BoxDecoration(
           color: AppColors.purpleDark.withOpacity(0.5),
