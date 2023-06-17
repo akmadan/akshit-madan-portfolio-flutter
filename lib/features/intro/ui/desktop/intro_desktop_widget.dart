@@ -113,48 +113,16 @@ class IntroDesktopWidget extends StatelessWidget {
                   SizedBox(
                     child: Row(
                       children: [
-                        InkWell(
-                          onTap: () => launchUrl(Uri.parse(
-                              'https://www.instagram.com/akshitmadan_/')),
-                          child: SocialWidget(
-                            placeholderText: '',
-                            iconData: SocialIconsFlutter.instagram,
-                            iconColor: Colors.white,
-                            link: 'https://www.instagram.com/akshitmadan_/',
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => launchUrl(
-                              Uri.parse('https://github.com/akmadan')),
-                          child: SocialWidget(
-                            placeholderText: '',
-                            iconData: SocialIconsFlutter.github,
-                            iconColor: Colors.white,
-                            link: 'https://github.com/akmadan',
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => launchUrl(Uri.parse(
-                              'https://www.linkedin.com/in/akshit-madan-394a82a6/')),
-                          child: SocialWidget(
-                            placeholderText: '',
-                            iconData: SocialIconsFlutter.linkedin_box,
-                            iconColor: Colors.white,
-                            link:
-                                'https://www.linkedin.com/in/akshit-madan-394a82a6/',
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => launchUrl(Uri.parse(
-                              'https://www.youtube.com/channel/UCBlphb6_k7X1P28OCYXMsWg')),
-                          child: SocialWidget(
-                            placeholderText: '',
-                            iconData: SocialIconsFlutter.youtube,
-                            iconColor: Colors.white,
-                            link:
-                                'https://www.youtube.com/channel/UCBlphb6_k7X1P28OCYXMsWg',
-                          ),
-                        )
+                        socialIcon('https://www.instagram.com/akshitmadan_/',
+                            SocialIconsFlutter.instagram),
+                        socialIcon('https://github.com/akmadan',
+                            SocialIconsFlutter.github),
+                        socialIcon(
+                            'https://www.linkedin.com/in/akshit-madan-394a82a6/',
+                            SocialIconsFlutter.linkedin_box),
+                        socialIcon(
+                            'https://www.youtube.com/channel/UCBlphb6_k7X1P28OCYXMsWg',
+                            SocialIconsFlutter.youtube)
                       ],
                     ),
                   )
@@ -163,6 +131,18 @@ class IntroDesktopWidget extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget socialIcon(String link, IconData iconPath) {
+    return InkWell(
+      onTap: () => launchUrl(Uri.parse(link)),
+      child: SocialWidget(
+        placeholderText: '',
+        iconData: SocialIconsFlutter.youtube,
+        iconColor: Colors.white,
+        link: link,
       ),
     );
   }
