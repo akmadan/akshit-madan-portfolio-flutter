@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:social_media_flutter/social_media_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 class IntroDesktopWidget extends StatelessWidget {
   const IntroDesktopWidget({super.key});
@@ -138,7 +139,7 @@ class IntroDesktopWidget extends StatelessWidget {
 
   Widget socialIcon(String link, IconData iconPath) {
     return InkWell(
-      onTap: () => launchUrl(Uri.parse(link)),
+      onTap: () => html.window.open(link, '_blank'),
       child: SocialWidget(
         placeholderText: '',
         iconData: iconPath,

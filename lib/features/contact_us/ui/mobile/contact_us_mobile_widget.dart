@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:social_media_flutter/widgets/icons.dart';
 import 'package:social_media_flutter/widgets/text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 class ContactUsMobileWidget extends StatelessWidget {
   const ContactUsMobileWidget({super.key});
@@ -57,7 +58,7 @@ class ContactUsMobileWidget extends StatelessWidget {
 
   Widget socialIcon(String link, IconData iconPath) {
     return InkWell(
-      onTap: () => launchUrl(Uri.parse(link)),
+      onTap: () => html.window.open(link, '_blank'),
       child: SocialWidget(
         placeholderText: '',
         iconData: iconPath,
